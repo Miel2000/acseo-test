@@ -1,85 +1,142 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+
+const rootViews = [
+	{ path: "/errorView", name: "Expertise" },
+	{ path: "/", name: "Technologie & CMS" },
+	{ path: "/", name: "Réalisations" },
+	{ path: "/", name: "Agences" },
+	{ path: "/", name: "Equipe" },
+	{ path: "/", name: "Blog" },
+];
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+	<header>
+		<div class="navbar-container shadow-sm">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+			<div class="navigation-mobile d-lg-none">
+				<div class="container">
+					<div class="d-flex align-items-center">
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+						<div class="mobile-menu-burger d-flex justify-content-center col-2">
+							<img
+								alt="icon-menu-burger"
+								class="icon-menu-buger"
+								src="@/assets/icon/burger.svg"
+							/>
+						</div>
 
-  <RouterView />
+						<div class="mobile-logo d-flex justify-content-center col-8">
+							<RouterLink to="/" class="nav-link">
+								<img
+									alt="logo-acseo"
+									class="logo-mobile"
+									src="@/assets/logo.svg"
+							/></RouterLink>
+						</div>
+
+						<div class="mobile-mail d-flex justify-content-center col-2">
+							<RouterLink to="/" class="nav-link">
+								<img
+									alt="icon-mail"
+									class="logo"
+									src="@/assets/icon/mail.svg"
+							/></RouterLink>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="navigation-desktop d-lg-inline d-none d-xs-none d-sm-inline d-md-inline d-xl-inline d-flex justify-content-center">
+				<nav
+					class="navbar navbar-expand-lg navbar-light bg-white mb-5"
+				>
+					<div class="container">
+						<div class="container d-flex ">
+							<div class="logo-desktop col-3 d-xs-none d-sm-none d-lg-inline">
+
+								<RouterLink to="/" class="nav-link"
+									><img
+										alt="logo-acseo"
+										class="logo"
+										src="@/assets/logo.svg"
+								/></RouterLink>
+						
+							</div>
+							<div class="collapse navbar-collapse col-7" id="navbarNav">
+								<ul class="navbar-nav align-items-center">
+								
+	
+									<li class="nav-item">
+										<RouterLink to="contact" class="nav-link">
+											Expertise
+										</RouterLink>
+									</li>
+									<li class="nav-item">
+										<RouterLink to="contact" class="nav-link">
+											Technologie & CMS
+										</RouterLink>
+									</li>
+									<li class="nav-item">
+										<RouterLink to="contact" class="nav-link">
+											Réalisations
+										</RouterLink>
+									</li>
+									<li class="nav-item">
+										<RouterLink to="contact" class="nav-link">
+											Agences
+										</RouterLink>
+									</li>
+									<li class="nav-item">
+										<RouterLink to="contact" class="nav-link">
+											Equipes
+										</RouterLink>
+									</li>
+									<li class="nav-item">
+										<RouterLink to="/" class="nav-link">
+											Blog
+										</RouterLink>
+									</li>
+								</ul>
+							</div>
+							<div class="contact-btn d-lg-flex align-items-center col-1 col-lg-2 col-xl-3 d-xs-none d-sm-none">
+								<RouterLink to="/contact" class="nav-link">
+										Contact
+								</RouterLink>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</header>
+
+	<RouterView />
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style scoped lang="scss">
+.navbar-container {
+	.navigation-desktop {
+		height: 98px;
+	
+
+		.desktop {
+			.logo {
+				width: 200px;
+				height: 200px;
+			}
+		}
+	}
+
+	
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+	.navigation-mobile {
+		height: 73px;
+	}
 }
 </style>
