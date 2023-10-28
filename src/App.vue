@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 const rootViews = [
 	{ path: "/errorView", name: "Expertise" },
 	{ path: "/", name: "Technologie & CMS" },
@@ -28,7 +29,6 @@ const servicesPanels = [
 
 <template>
 	<header>
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 		<div class="navbar-container">
 			<div
@@ -196,7 +196,43 @@ const servicesPanels = [
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
 				</div>
 				<div class="carousel-container">
+					<carousel :items-to-show="1.5">
+						<slide v-for="slide in 10" :key="slide">
 
+							<div class="carousel__item d-flex">
+								<div class="position-relative">
+									<div class="left-content">
+										<div class="collab-logo">
+											<img src="img/jpp.svg" alt="">
+										</div>
+										<div class="collab-details position-absolute d-flex flex-column">
+											<div class="collab-logo d-flex justify-content-start">
+												<img src="logo/tf1.svg" alt="">
+											</div>
+											<div class="collab-name d-flex justify-content-start text-white pt-1">
+												<span>JPP TV</span>
+											</div>
+											<div class="collab-stack d-flex justify-content-start text-white">
+												Développement - Symfony
+											</div>
+										</div>
+									</div>
+				
+									<div class="right-content">
+										<div class="collab-cta position-absolute d-flex flex-column">
+											<a href="#" alt=""><img src="icon/arrow.svg" alt=""></a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</slide>
+
+						<!-- <template #addons>
+							<navigation />
+							<pagination />
+						</template> -->
+					</carousel>
 				</div>
 				<div class="btn-realisation text-center">
 					<a href="">Voir toutes les réalisations</a>
@@ -308,6 +344,7 @@ $fontSize: 14px;
 	line-height: 18px;
 }
 
+
 @mixin subtitleWithUnderline {
 	.title {
 		position: relative;
@@ -359,6 +396,53 @@ $fontSize: 14px;
 	.btn-realisation {
 		a {	
 			@include ctaLink;
+		}
+	}
+}
+
+.carousel-container {
+	.carousel__item {
+		color: black;
+	}
+
+	.carousel__slide {
+		padding: 10px;
+	}
+
+	.carousel__prev,
+	.carousel__next {
+		box-sizing: content-box;
+		border: 5px solid white;
+	}
+
+	.collab-details {
+		bottom: 30px;
+		left: 30px;
+		color: white;
+		.collab-name {
+			span {
+				font-family: "Raleway", sans-serif;
+				font-weight: 800;
+				font-size: 28px;
+			}
+		}
+	}
+	.collab-cta {
+		bottom: 30px;
+		right: 30px;
+		a {
+			transition: all 0.25s;
+			height: 40px;
+			display: flex;
+			justify-content: center;
+			width: 40px;
+			border: 1px solid white;
+			border-radius: 50%;
+			&:hover {
+				background-color: $ctaLinkColor;
+				border-radius: 50%;
+				border-color: $ctaLinkColor; 
+			}
 		}
 	}
 }
