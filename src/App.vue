@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 const rootViews = [
 	{ path: "/errorView", name: "Expertise" },
 	{ path: "/", name: "Technologie & CMS" },
@@ -11,25 +11,64 @@ const rootViews = [
 	{ path: "/", name: "Blog" },
 ];
 
-
 const servicesPanels = [
-	{ image: "conseil", title: "Conseil stratégie digital", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "design", title: "UI/UX Design", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "devweb", title: "Développement Web", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "appmobile", title: "Application Mobile", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "ecommerce", title: "E-commerce", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "innovation", title: "Innovation", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "centreservice", title: "Centre de service", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !" },
-	{ image: "tma", title: "TMA", text: "Découvrez notre service de Tierce Maintenance Applicative" },
-]
+	{
+		image: "conseil",
+		title: "Conseil stratégie digital",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "design",
+		title: "UI/UX Design",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "devweb",
+		title: "Développement Web",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "appmobile",
+		title: "Application Mobile",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "ecommerce",
+		title: "E-commerce",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "innovation",
+		title: "Innovation",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "centreservice",
+		title: "Centre de service",
+		text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit !",
+	},
+	{
+		image: "tma",
+		title: "TMA",
+		text: "Découvrez notre service de Tierce Maintenance Applicative",
+	},
+];
 
+const breakpoints = {
+	1400: {
+		itemsToShow: 2.5,
+		snapAlign: "left",
+	},
+};
 
-
+const settings = {
+	itemsToShow: 1,
+	snapAlign: "left",
+};
 </script>
 
 <template>
 	<header>
-
 		<div class="navbar-container">
 			<div
 				class="navigation-mobile shadow-sm d-lg-none d-flex align-items-center"
@@ -106,10 +145,10 @@ const servicesPanels = [
 				<div
 					class="left-content col-lg-6 d-flex flex-column justify-content-center"
 				>
-				<div class="title mb-4 text-center text-md-center text-lg-start">
-					<h1 class="text-center text-md-left">PROJETS WEB</h1>
-					<h1 class="text-center text-md-left">ET MOBILES</h1>
-				</div>
+					<div class="title mb-4 text-center text-md-center text-lg-start">
+						<h1 class="text-center text-md-left">PROJETS WEB</h1>
+						<h1 class="text-center text-md-left">ET MOBILES</h1>
+					</div>
 
 					<div
 						class="text mb-4 col-lg-9 text-center text-sm-center text-lg-start"
@@ -157,16 +196,21 @@ const servicesPanels = [
 				<div class="services">
 					<div class="panels-container">
 						<div class="row d-md-flex justify-content-around">
-							<div v-for="(panel, index) in servicesPanels" class="col-md-3 col-sm-6 col-6 pb-5">
+							<div
+								v-for="(panel, index) in servicesPanels"
+								class="col-md-3 col-sm-6 col-6 pb-5"
+							>
 								<div class="panel-item d-flex flex-column">
 									<div class="panel-image d-flex justify-content-center">
 										<img
 											:alt="panel.title"
 											class="logo"
-											:src="'icon/' + panel.image + '.svg' "
+											:src="'icon/' + panel.image + '.svg'"
 										/>
 									</div>
-									<div class="panel-title  text-center d-flex justify-content-center pt-3">
+									<div
+										class="panel-title text-center d-flex justify-content-center pt-3"
+									>
 										<p>{{ panel.title }}</p>
 									</div>
 									<div
@@ -187,60 +231,66 @@ const servicesPanels = [
 			</div>
 		</div>
 		<div class="realisations-container">
-			<div class="container">
-
-				<div class="title d-flex justify-content-center pt-5 pb-4">
-					<h2>Nos réalisations</h2>
-				</div>
-				<div class="text text-center">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
-				</div>
-				<div class="carousel-container">
-					<carousel :items-to-show="1.5">
-						<slide v-for="slide in 10" :key="slide">
-
-							<div class="carousel__item d-flex">
-								<div class="position-relative">
-									<div class="left-content">
-										<div class="collab-logo">
-											<img src="img/jpp.svg" alt="">
-										</div>
-										<div class="collab-details position-absolute d-flex flex-column">
-											<div class="collab-logo d-flex justify-content-start">
-												<img src="logo/tf1.svg" alt="">
-											</div>
-											<div class="collab-name d-flex justify-content-start text-white pt-1">
-												<span>JPP TV</span>
-											</div>
-											<div class="collab-stack d-flex justify-content-start text-white">
-												Développement - Symfony
-											</div>
-										</div>
+			<div class="title d-flex justify-content-center pt-5 pb-4">
+				<h2>Nos réalisations</h2>
+			</div>
+			<div class="text text-center pb-4">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod
+				</p>
+			</div>
+			<div class="carousel-container">
+				<Carousel
+					:slideWidth="550"
+					:wrap-around="true"
+					snapAlign="left"
+					:settings="settings"
+					:breakpoints="breakpoints"
+				>
+					<Slide v-for="slide in 10" :key="slide">
+						<div class="carousel__item position-relative">
+							<div class="left-content">
+								<div class="collab-logo">
+									<img src="img/jpp.svg" alt="" />
+								</div>
+								<div
+									class="collab-details position-absolute d-flex flex-column"
+								>
+									<div class="collab-logo d-flex justify-content-start">
+										<img src="logo/tf1.svg" alt="" />
 									</div>
-				
-									<div class="right-content">
-										<div class="collab-cta position-absolute d-flex flex-column">
-											<a href="#" alt=""><img src="icon/arrow.svg" alt=""></a>
-										</div>
+									<div
+										class="collab-name d-flex justify-content-start text-white pt-1"
+									>
+										<span>JPP TV</span>
+									</div>
+									<div
+										class="collab-stack d-flex justify-content-start text-white"
+									>
+										Développement - Symfony
 									</div>
 								</div>
 							</div>
 
-						</slide>
+							<div class="right-content">
+								<div class="collab-cta position-absolute d-flex flex-column">
+									<a href="#" alt=""><img src="icon/arrow.svg" alt="" /></a>
+								</div>
+							</div>
+						</div>
+					</Slide>
 
-						<!-- <template #addons>
+					<!-- <template #addons>
 							<navigation />
 							<pagination />
 						</template> -->
-					</carousel>
-				</div>
-				<div class="btn-realisation text-center">
-					<a href="">Voir toutes les réalisations</a>
-				</div>
+				</Carousel>
 			</div>
-
+			<div class="btn-realisation text-center">
+				<a href="">Voir toutes les réalisations</a>
+			</div>
 		</div>
-		
 	</main>
 
 	<!-- <RouterView /> -->
@@ -248,7 +298,6 @@ const servicesPanels = [
 
 <style scoped lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,900;1,100;1,200&display=swap");
-
 
 $primary: #ff6d74;
 $grayBackground: #f5f5f5;
@@ -269,7 +318,7 @@ $fontSize: 14px;
 		.nav-item {
 			padding-right: 10px;
 			padding-left: 10px;
-			&:nth-last-child(1){
+			&:nth-last-child(1) {
 				border: none;
 			}
 		}
@@ -344,7 +393,6 @@ $fontSize: 14px;
 	line-height: 18px;
 }
 
-
 @mixin subtitleWithUnderline {
 	.title {
 		position: relative;
@@ -393,8 +441,12 @@ $fontSize: 14px;
 
 .realisations-container {
 	@include subtitleWithUnderline;
+
+	.text {
+		color: $grayText;
+	}
 	.btn-realisation {
-		a {	
+		a {
 			@include ctaLink;
 		}
 	}
@@ -402,11 +454,14 @@ $fontSize: 14px;
 
 .carousel-container {
 	.carousel__item {
+		// width: 550px !important;
+		height: 400px !important;
 		color: black;
 	}
 
 	.carousel__slide {
-		padding: 10px;
+		// padding: 10px;
+		// justify-content: left !important;
 	}
 
 	.carousel__prev,
@@ -439,9 +494,9 @@ $fontSize: 14px;
 			border: 1px solid white;
 			border-radius: 50%;
 			&:hover {
-				background-color: $ctaLinkColor;
 				border-radius: 50%;
-				border-color: $ctaLinkColor; 
+				background-color: $ctaLinkColor;
+				border-color: $ctaLinkColor;
 			}
 		}
 	}
