@@ -15,7 +15,7 @@ const rootViews = [
 	<header>
 		<div class="navbar-container shadow-sm">
 
-			<div class="navigation-mobile d-lg-none">
+			<div class="navigation-mobile  d-lg-none d-flex align-items-center">
 				<div class="container">
 					<div class="d-flex align-items-center">
 
@@ -47,13 +47,13 @@ const rootViews = [
 					</div>
 				</div>
 			</div>
-			<div class="navigation-desktop d-lg-inline d-none d-xs-none d-sm-inline d-md-inline d-xl-inline d-flex justify-content-center">
+			 <div class="navigation-desktop  d-none d-sm-none d-lg-inline d-flex justify-content-center">
 				<nav
 					class="navbar navbar-expand-lg navbar-light bg-white mb-5"
 				>
 					<div class="container">
-						<div class="container d-flex ">
-							<div class="logo-desktop col-3 d-xs-none d-sm-none d-lg-inline">
+						<div class="container d-flex">
+							<div class="logo-desktop col-3 d-lg-inline">
 
 								<RouterLink to="/" class="nav-link"
 									><img
@@ -107,7 +107,7 @@ const rootViews = [
 						</div>
 					</div>
 				</nav>
-			</div>
+			</div> 
 		</div>
 	</header>
 
@@ -128,15 +128,14 @@ const rootViews = [
 		}
 	}
 
+	.navigation-mobile {
+		height: 73px;
+	}
+
 	
 }
 
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) { 
 
-	.navigation-mobile {
-		height: 73px;
-	}
-}
+
 </style>
