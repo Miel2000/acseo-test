@@ -4,6 +4,7 @@
 	"exclude": ["src/**/__tests__/*"],
 	"files": ["src/views/ErrorView.vue"],
 	"compilerOptions": {
+		"types": ["jquery"],
 		"composite": true,
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
