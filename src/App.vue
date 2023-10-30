@@ -78,7 +78,6 @@ const settingsSecondCarousel = {
 	slideWidth: 335,
 	snapAlign: "center",
 };
-
 </script>
 
 <template>
@@ -338,7 +337,6 @@ const settingsSecondCarousel = {
 						<Slide v-for="slide in 10" :key="slide">
 							<div class="carousel__item">
 								<div class="position-relative">
-
 									<div class="left-content">
 										<div class="collab-logo">
 											<img src="img/jpp.svg" alt="" />
@@ -361,9 +359,11 @@ const settingsSecondCarousel = {
 											</div>
 										</div>
 									</div>
-	
+
 									<div class="right-content">
-										<div class="collab-cta position-absolute d-flex flex-column">
+										<div
+											class="collab-cta position-absolute d-flex flex-column"
+										>
 											<a href="#" alt=""><img src="icon/arrow.svg" alt="" /></a>
 										</div>
 									</div>
@@ -378,11 +378,10 @@ const settingsSecondCarousel = {
 					</Carousel>
 				</div>
 			</div>
-			<div class="btn-realisation pt-3 pb-5 text-center">
+			<div class="btn-more pt-3 pb-5 text-center">
 				<a href="">Voir toutes les réalisations</a>
 			</div>
 		</div>
-
 		<div class="temoignages-container">
 			<div class="title d-flex justify-content-center pt-5 pb-4">
 				<h2>Témoignages</h2>
@@ -395,39 +394,150 @@ const settingsSecondCarousel = {
 			</div>
 
 			<div class="carousel-container">
-				
 				<div class="container">
-					<Carousel 
+					<Carousel
 						snapAlign="start"
 						:slideWidth="550"
 						:wrap-around="true"
 						:settings="settingsSecondCarousel"
 						:breakpoints="breakPointSecondCarousel"
-						>
+					>
 						<Slide v-for="slide in 3" :key="slide">
 							<div class="carousel__item row">
-	
-								<div class="temoin-container ">
+								<div class="temoin-container">
 									<div class="temoin-image">
 										<img src="img/temoin.svg" alt="temoin" />
 									</div>
-									<div class="temoin-details pt-5 pb-3 d-flex flex-column justify-content-between">
-										<div class="text col-10 offset-1  pt-3">
-											“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+									<div
+										class="temoin-details pt-5 pb-3 d-flex flex-column justify-content-between"
+									>
+										<div class="text col-10 offset-1 pt-3">
+											“Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+											sed do eiusmod tempor incididunt ut labore et dolore magna
+											aliqua.”
 										</div>
 										<div class="infos pb-2 d-flex flex-column">
-											<span class="name">Martin Dupont</span>	
-											<span class="job">CEO | Onatera</span>	
+											<span class="name">Martin Dupont</span>
+											<span class="job">CEO | Onatera</span>
 										</div>
 									</div>
 								</div>
 							</div>
 						</Slide>
-	
+
 						<template #addons>
 							<pagination class="p-0 pt-3" />
 						</template>
 					</Carousel>
+				</div>
+			</div>
+		</div>
+		<div class="technologies-container">
+			<div class="title d-flex justify-content-center pt-5 pb-4">
+				<h2>Les meilleurs technologies</h2>
+			</div>
+			<div class="container">
+				<div
+					class="text text-center col-lg-8 offset-lg-2 offset-sm-0 col-sm-12 offset-md-0 pb-5"
+				>
+					<p>
+						Nos Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat.
+					</p>
+				</div>
+			</div>
+			<div
+				class="technos-container d-flex flex-column flex-sm-column flex-md-row"
+			>
+				<div class="d-flex col-md-6 col-sm-12">
+					<div
+						class="techno col-6 symfony position-relative d-flex justify-content-center align-items-center"
+					>
+						<div class="logo">
+							<img src="icon/symfony.svg" alt="" />
+						</div>
+					</div>
+					<div
+						class="techno col-6 react position-relative d-flex justify-content-center align-items-center"
+					>
+						<div class="logo">
+							<img src="icon/react.svg" alt="" />
+						</div>
+					</div>
+				</div>
+				<div class="d-flex col-md-6 col-12">
+					<div
+						class="techno col-6 node position-relative d-flex justify-content-center align-items-center"
+					>
+						<div class="logo">
+							<img src="icon/node.svg" alt="" />
+						</div>
+					</div>
+					<div
+						class="techno col-6 vue position-relative d-flex justify-content-center align-items-center"
+					>
+						<div class="logo">
+							<img src="icon/vue.svg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-more pt-3 pb-5 text-center">
+				<a href="">Voir toutes les technologies</a>
+			</div>
+		</div>
+
+		<div class="blog-container">
+			<div class="title d-flex justify-content-center pt-5 pb-4">
+				<h2>Le blog d'ACSEO</h2>
+			</div>
+			<div class="container">
+				<div
+					class="text text-center col-lg-8 offset-lg-2 offset-sm-0 col-sm-12 offset-md-0 pb-5"
+				>
+					<p>
+						Nos Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+						ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+						aliquip ex ea commodo consequat.
+					</p>
+				</div>
+
+				<div class="cards-container pb-3 d-lg-flex justify-content-around">
+					<div v-for="card in 3" class="card mb-3 mx-auto">
+						<div class="image">
+							<img src="img/debug.svg" alt="" />
+						</div>
+						<div class="container h-100">
+							<div
+								class="details h-100 d-flex flex-column justify-content-around"
+							>
+								<div class="title mt-3 mb-3">
+									<span>Débbugger un projet PHP Symfony en 2021</span>
+								</div>
+								<div class="text mb-4">
+									Si debugger, c’est supprimer des bugs, alors programmer ne
+									peut être (...)
+								</div>
+								<div class="footer mb-5 d-flex justify-content-between">
+									<div class="date">08 Juillet2021</div>
+									<div class="cta">
+										<div
+											class="collab-cta position-absolute d-flex flex-column"
+										>
+											<a href="#" alt=""><img src="icon/arrowRed.svg" alt="" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-more pt-3 pb-5 text-center">
+					<a href="">Voir toutes les articles</a>
 				</div>
 			</div>
 		</div>
@@ -451,27 +561,11 @@ $fontSize: 14px;
 	border-right: solid 1px $greenColor;
 }
 
-.navbar-container {
-	font-size: $fontSize;
-	.navigation-desktop {
-		height: 98px;
-		.nav-item {
-			padding-right: 10px;
-			padding-left: 10px;
-			&:nth-last-child(1) {
-				border: none;
-			}
-		}
-	}
-
-	.navigation-mobile {
-		height: 73px;
-	}
-}
 
 .presentation-container,
 .expertises-container,
-.temoignages-container {
+.temoignages-container,
+.blog-container {
 	min-height: 65vh;
 	font-size: $fontSize;
 }
@@ -545,6 +639,30 @@ $fontSize: 14px;
 		}
 	}
 }
+.btn-more {
+	a {
+		@include ctaLink;
+	}
+}
+
+.navbar-container {
+	font-size: $fontSize;
+	.navigation-desktop {
+		height: 98px;
+		.nav-item {
+			padding-right: 10px;
+			padding-left: 10px;
+			&:nth-last-child(1) {
+				border: none;
+			}
+		}
+	}
+
+	.navigation-mobile {
+		height: 73px;
+	}
+}
+
 
 .presentation-container {
 	.title {
@@ -587,14 +705,8 @@ $fontSize: 14px;
 	.text {
 		color: $grayText;
 	}
-	.btn-realisation {
-		a {
-			@include ctaLink;
-		}
-	}
 
 	.carousel-container {
-
 		.carousel__item {
 			display: flex;
 			justify-content: center;
@@ -727,7 +839,8 @@ $fontSize: 14px;
 							font-size: 16px;
 							font-weight: 900;
 						}
-						.job {}
+						.job {
+						}
 					}
 				}
 			}
@@ -736,7 +849,6 @@ $fontSize: 14px;
 			// background-color: red;
 			.carousel__pagination-item {
 				.carousel__pagination-button {
-				
 					height: 5px;
 					border-radius: 50px;
 					background-color: red !important;
@@ -744,10 +856,112 @@ $fontSize: 14px;
 				}
 			}
 		}
-	
+	}
+}
+.technologies-container {
+	@include subtitleWithUnderline;
+	.techno {
+		font-family: "Raleway", sans-serif;
+		min-height: 260px;
+
+		img {
+			width: 100%;
+			padding: 10px;
+		}
+
+		&.symfony {
+			background-color: black;
+			&::after {
+				content: "Symfony";
+				color: white;
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+		&.react {
+			background-color: #61dafb;
+			&::after {
+				content: "React & React Native";
+				color: white;
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+		&.node {
+			background-color: #83cd29;
+			&::after {
+				content: "NodeJS";
+				color: white;
+				position: absolute;
+				bottom: 20px;
+			}
+		}
+		&.vue {
+			background-color: #41b883;
+			&::after {
+				content: "NodeJS";
+				color: white;
+				position: absolute;
+				bottom: 20px;
+			}
+		}
 	}
 }
 
+.blog-container {
+	@include subtitleWithUnderline;
+	background-color: $grayBackground;
+
+	.cards-container {
+		.card {
+			border: none;
+			border-radius: 0 0 30px 30px;
+			max-width: 360px;
+			min-width: 335px;
+			height: 470px;
+		}
+		.title {
+			color: #007c9f;
+			font-size: 22px;
+			line-height: 28px;
+			font-weight: 700;
+		}
+		.text {
+		}
+		.footer {
+			.date {
+			}
+			.cta {
+				.collab-cta {
+					bottom: 26px;
+    				right: 20px;
+					a {
+						transition: all 0.25s;
+						height: 30px;
+						display: flex;
+						justify-content: center;
+						width: 30px;
+						border: 1px solid #FF6D74;
+						border-radius: 50%;
+						
+						img {
+							width: 10px;
+						}
+						&:hover {
+							border-radius: 50%;
+							img {
+								filter:brightness(10);
+								fill: white;
+							}
+							background-color: $ctaLinkColor;
+							border-color: $ctaLinkColor;
+						}
+					}
+				}
+			}
+		}
+	}
+}
 .contact-btn {
 	padding: 0px 0px 0px 25px;
 	.btn-text {
@@ -762,17 +976,11 @@ $fontSize: 14px;
 	}
 }
 
-
-@media (max-width: 575.98px) { 
-
+@media (max-width: 575.98px) {
 	.realisations-container {
 		.carousel__slide {
 			justify-content: inherit !important;
 		}
-	}
-
-	.temoignages-container {
-	
 	}
 }
 </style>
