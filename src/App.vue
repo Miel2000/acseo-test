@@ -2,6 +2,8 @@
 import { RouterLink, RouterView } from "vue-router";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
+
+
 const rootViews = [
 	{ path: "/errorView", name: "Expertise" },
 	{ path: "/", name: "Technologie & CMS" },
@@ -54,14 +56,14 @@ const servicesPanels = [
 	},
 ];
 
-const breakpoints = {
+const breakPointFirstCarousel = {
 	1400: {
 		itemsToShow: 2.5,
 		snapAlign: "left",
 	},
 };
 
-const settings = {
+const settingsFirstCarousel = {
 	itemsToShow: 1,
 	snapAlign: "left",
 };
@@ -234,19 +236,49 @@ const settings = {
 			<div class="title d-flex justify-content-center pt-5 pb-4">
 				<h2>Nos réalisations</h2>
 			</div>
-			<div class="text text-center pb-4">
+			<div class="text text-center">
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 					eiusmod
 				</p>
 			</div>
+			<div class="slide-navigation position-relative">
+				<div class="mobile d-lg-none">
+					<div class="btn-container d-flex justify-content-center pt-1 pb-3">
+						<div class="btn-slide previous">
+							<a href="#" alt="">
+								<img src="icon/arrow.svg" alt="" />
+							</a>
+						</div>
+						<div class="btn-slide next" style="fill: blue">
+							<a href="#" alt="">
+								<img src="icon/arrow.svg" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="desktop d-none d-sm-none d-lg-inline">
+					<div class="btn-container d-flex justify-content-end pt-1 pb-3">
+						<div class="btn-slide previous">
+							<a href="#" alt="">
+								<img src="icon/arrow.svg" alt="" />
+							</a>
+						</div>
+						<div class="btn-slide next" style="fill: blue">
+							<a href="#" alt="">
+								<img src="icon/arrow.svg" alt="" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="carousel-container">
 				<Carousel
+					snapAlign="start"
 					:slideWidth="550"
 					:wrap-around="true"
-					snapAlign="left"
-					:settings="settings"
-					:breakpoints="breakpoints"
+					:settings="settingsFirstCarousel"
+					:breakpoints="breakPointFirstCarousel"
 				>
 					<Slide v-for="slide in 10" :key="slide">
 						<div class="carousel__item position-relative">
@@ -287,8 +319,42 @@ const settings = {
 						</template> -->
 				</Carousel>
 			</div>
-			<div class="btn-realisation text-center">
+			<div class="btn-realisation pt-3 pb-5 text-center">
 				<a href="">Voir toutes les réalisations</a>
+			</div>
+		</div>
+
+		<div class="temoignages-container">
+			<div class="title d-flex justify-content-center pt-5 pb-4">
+				<h2>Témoignages</h2>
+			</div>
+			<div class="text text-center">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+					eiusmod
+				</p>
+			</div>
+
+			<div class="carousel-container">
+				<Carousel
+					snapAlign="start"
+					:slideWidth="550"
+					:wrap-around="true"
+
+				>
+					<Slide v-for="slide in 10" :key="slide">
+						<div class="carousel__item">
+							<div class="temoin-image">
+								<img src="img/temoing.svg" alt="temoin">
+							</div>
+						</div>
+					</Slide>
+
+					<template #addons>
+						<navigation />
+						<pagination />
+					</template>
+				</Carousel>
 			</div>
 		</div>
 	</main>
@@ -330,7 +396,8 @@ $fontSize: 14px;
 }
 
 .presentation-container,
-.expertises-container {
+.expertises-container,
+.temoignages-container {
 	min-height: 65vh;
 	font-size: $fontSize;
 }
@@ -388,6 +455,7 @@ $fontSize: 14px;
 }
 
 @mixin ctaLink {
+	font-family: "Raleway", sans-serif;
 	color: $ctaLinkColor;
 	font-size: 14px;
 	line-height: 18px;
@@ -450,55 +518,110 @@ $fontSize: 14px;
 			@include ctaLink;
 		}
 	}
+
+	.carousel-container {
+		.carousel__item {
+			max-height: 400px !important;
+			min-height: 244px !important;
+			color: black;
+		}
+
+		.carousel__prev,
+		.carousel__next {
+			box-sizing: content-box;
+			border: 5px solid white;
+		}
+
+		.collab-details {
+			bottom: 30px;
+			left: 30px;
+			color: white;
+			.collab-name {
+				span {
+					font-family: "Raleway", sans-serif;
+					font-weight: 800;
+					font-size: 28px;
+				}
+			}
+		}
+		.collab-cta {
+			bottom: 30px;
+			right: 30px;
+			a {
+				transition: all 0.25s;
+				height: 40px;
+				display: flex;
+				justify-content: center;
+				width: 40px;
+				border: 1px solid white;
+				border-radius: 50%;
+				&:hover {
+					border-radius: 50%;
+					background-color: $ctaLinkColor;
+					border-color: $ctaLinkColor;
+				}
+			}
+		}
+	}
+	.slide-navigation {
+		.desktop {
+			.btn-container {
+				transform: translate(-15px, -53px);
+			}
+		}
+		.btn-container {
+			.btn-slide {
+				border: 1px solid #737b7d4a;
+				border-radius: 50%;
+				margin: 0 10px;
+				&:last-child {
+					border: 1px solid $ctaLinkColor;
+					img {
+						svg {
+							fill: red;
+						}
+					}
+				}
+				&:hover {
+					border: 1px solid white;
+				}
+				&.previous {
+					transform: rotate(180deg);
+				}
+				img {
+					filter: invert(1);
+					opacity: 0.2;
+					width: 12px;
+				}
+				a {
+					transition: all 0.25s;
+					height: 40px;
+					display: flex;
+					justify-content: center;
+					width: 40px;
+					border: 1px solid white;
+					border-radius: 50%;
+
+					&:hover {
+						border-radius: 50%;
+						background-color: $ctaLinkColor;
+						border-color: $ctaLinkColor;
+						img {
+							filter: invert(0);
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
-.carousel-container {
-	.carousel__item {
-		// width: 550px !important;
-		height: 400px !important;
-		color: black;
-	}
-
-	.carousel__slide {
-		// padding: 10px;
-		// justify-content: left !important;
-	}
-
-	.carousel__prev,
-	.carousel__next {
-		box-sizing: content-box;
-		border: 5px solid white;
-	}
-
-	.collab-details {
-		bottom: 30px;
-		left: 30px;
-		color: white;
-		.collab-name {
-			span {
-				font-family: "Raleway", sans-serif;
-				font-weight: 800;
-				font-size: 28px;
-			}
-		}
-	}
-	.collab-cta {
-		bottom: 30px;
-		right: 30px;
-		a {
-			transition: all 0.25s;
-			height: 40px;
-			display: flex;
-			justify-content: center;
-			width: 40px;
-			border: 1px solid white;
-			border-radius: 50%;
-			&:hover {
-				border-radius: 50%;
-				background-color: $ctaLinkColor;
-				border-color: $ctaLinkColor;
-			}
-		}
+.temoignages-container {
+	@include subtitleWithUnderline;
+	background-color: $grayBackground;
+	.text {
+		color: $grayText;
 	}
 }
 
