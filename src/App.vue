@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from "vue-router";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
 
-
 const rootViews = [
 	{ path: "/errorView", name: "Expertise" },
 	{ path: "/", name: "Technologie & CMS" },
@@ -59,14 +58,27 @@ const servicesPanels = [
 const breakPointFirstCarousel = {
 	1400: {
 		itemsToShow: 2.5,
-		snapAlign: "left",
+		snapAlign: "right",
+	},
+};
+const breakPointSecondCarousel = {
+	1400: {
+		itemsToShow: 3,
+		snapAlign: "center",
 	},
 };
 
 const settingsFirstCarousel = {
 	itemsToShow: 1,
-	snapAlign: "left",
+	slideWidth: 375,
+	snapAlign: "center",
 };
+const settingsSecondCarousel = {
+	itemsToShow: 1,
+	slideWidth: 335,
+	snapAlign: "center",
+};
+
 </script>
 
 <template>
@@ -163,7 +175,7 @@ const settingsFirstCarousel = {
 					</div>
 
 					<div
-						class="contact-btn p-0 text-light d-flex justify-content-center justify-content-lg-start"
+						class="contact-btn pb-4 text-light d-flex justify-content-center justify-content-lg-start"
 					>
 						<RouterLink to="/contact" class="nav-link btn-text text-nowrap">
 							Contactez-nous
@@ -273,51 +285,98 @@ const settingsFirstCarousel = {
 				</div>
 			</div>
 			<div class="carousel-container">
-				<Carousel
-					snapAlign="start"
-					:slideWidth="550"
-					:wrap-around="true"
-					:settings="settingsFirstCarousel"
-					:breakpoints="breakPointFirstCarousel"
-				>
-					<Slide v-for="slide in 10" :key="slide">
-						<div class="carousel__item position-relative">
-							<div class="left-content">
-								<div class="collab-logo">
-									<img src="img/jpp.svg" alt="" />
+				<div class="desktop container-fluid d-md-none">
+					<Carousel
+						snapAlign="start"
+						:slideWidth="550"
+						:wrap-around="true"
+						:settings="settingsFirstCarousel"
+						:breakpoints="breakPointFirstCarousel"
+					>
+						<Slide v-for="slide in 10" :key="slide">
+							<div class="carousel__item position-relative">
+								<div class="left-content">
+									<div class="collab-logo">
+										<img src="img/jpp.svg" alt="" />
+									</div>
+									<div
+										class="collab-details position-absolute d-flex flex-column"
+									>
+										<div class="collab-logo d-flex justify-content-start">
+											<img src="logo/tf1.svg" alt="" />
+										</div>
+										<div
+											class="collab-name d-flex justify-content-start text-white pt-1"
+										>
+											<span>JPP TV</span>
+										</div>
+										<div
+											class="collab-stack d-flex justify-content-start text-white"
+										>
+											Développement - Symfony
+										</div>
+									</div>
 								</div>
-								<div
-									class="collab-details position-absolute d-flex flex-column"
-								>
-									<div class="collab-logo d-flex justify-content-start">
-										<img src="logo/tf1.svg" alt="" />
-									</div>
-									<div
-										class="collab-name d-flex justify-content-start text-white pt-1"
-									>
-										<span>JPP TV</span>
-									</div>
-									<div
-										class="collab-stack d-flex justify-content-start text-white"
-									>
-										Développement - Symfony
+
+								<div class="right-content">
+									<div class="collab-cta position-absolute d-flex flex-column">
+										<a href="#" alt=""><img src="icon/arrow.svg" alt="" /></a>
 									</div>
 								</div>
 							</div>
+						</Slide>
+					</Carousel>
+				</div>
+				<div class="mobile d-none d-md-block">
+					<Carousel
+						snapAlign="start"
+						:slideWidth="375"
+						:wrap-around="true"
+						:settings="settingsFirstCarousel"
+						:breakpoints="breakPointFirstCarousel"
+					>
+						<Slide v-for="slide in 10" :key="slide">
+							<div class="carousel__item">
+								<div class="position-relative">
 
-							<div class="right-content">
-								<div class="collab-cta position-absolute d-flex flex-column">
-									<a href="#" alt=""><img src="icon/arrow.svg" alt="" /></a>
+									<div class="left-content">
+										<div class="collab-logo">
+											<img src="img/jpp.svg" alt="" />
+										</div>
+										<div
+											class="collab-details position-absolute d-flex flex-column"
+										>
+											<div class="collab-logo d-flex justify-content-start">
+												<img src="logo/tf1.svg" alt="" />
+											</div>
+											<div
+												class="collab-name d-flex justify-content-start text-white pt-1"
+											>
+												<span>JPP TV</span>
+											</div>
+											<div
+												class="collab-stack d-flex justify-content-start text-white"
+											>
+												Développement - Symfony
+											</div>
+										</div>
+									</div>
+	
+									<div class="right-content">
+										<div class="collab-cta position-absolute d-flex flex-column">
+											<a href="#" alt=""><img src="icon/arrow.svg" alt="" /></a>
+										</div>
+									</div>
 								</div>
 							</div>
-						</div>
-					</Slide>
+						</Slide>
 
-					<!-- <template #addons>
+						<!-- <template #addons>
 							<navigation />
 							<pagination />
 						</template> -->
-				</Carousel>
+					</Carousel>
+				</div>
 			</div>
 			<div class="btn-realisation pt-3 pb-5 text-center">
 				<a href="">Voir toutes les réalisations</a>
@@ -336,25 +395,40 @@ const settingsFirstCarousel = {
 			</div>
 
 			<div class="carousel-container">
-				<Carousel
-					snapAlign="start"
-					:slideWidth="550"
-					:wrap-around="true"
-
-				>
-					<Slide v-for="slide in 10" :key="slide">
-						<div class="carousel__item">
-							<div class="temoin-image">
-								<img src="img/temoing.svg" alt="temoin">
+				
+				<div class="container">
+					<Carousel 
+						snapAlign="start"
+						:slideWidth="550"
+						:wrap-around="true"
+						:settings="settingsSecondCarousel"
+						:breakpoints="breakPointSecondCarousel"
+						>
+						<Slide v-for="slide in 3" :key="slide">
+							<div class="carousel__item row">
+	
+								<div class="temoin-container ">
+									<div class="temoin-image">
+										<img src="img/temoin.svg" alt="temoin" />
+									</div>
+									<div class="temoin-details pt-5 pb-3 d-flex flex-column justify-content-between">
+										<div class="text col-10 offset-1  pt-3">
+											“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”
+										</div>
+										<div class="infos pb-2 d-flex flex-column">
+											<span class="name">Martin Dupont</span>	
+											<span class="job">CEO | Onatera</span>	
+										</div>
+									</div>
+								</div>
 							</div>
-						</div>
-					</Slide>
-
-					<template #addons>
-						<navigation />
-						<pagination />
-					</template>
-				</Carousel>
+						</Slide>
+	
+						<template #addons>
+							<pagination class="p-0 pt-3" />
+						</template>
+					</Carousel>
+				</div>
 			</div>
 		</div>
 	</main>
@@ -520,9 +594,11 @@ $fontSize: 14px;
 	}
 
 	.carousel-container {
+
 		.carousel__item {
-			max-height: 400px !important;
-			min-height: 244px !important;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			color: black;
 		}
 
@@ -623,6 +699,53 @@ $fontSize: 14px;
 	.text {
 		color: $grayText;
 	}
+	.carousel-container {
+		transform: translateY(-45px);
+		.carousel__item {
+			.temoin-container {
+				width: 350px;
+				.temoin-image {
+					transform: translateY(70px);
+					img {
+						border-radius: 50%;
+						border: 20px solid white;
+					}
+				}
+
+				.temoin-details {
+					height: 263px;
+					background-color: white;
+					border-radius: 30px;
+					font-family: "Raleway", sans-serif;
+
+					.text {
+						font-size: 16px;
+						line-height: 22px;
+					}
+					.infos {
+						.name {
+							font-size: 16px;
+							font-weight: 900;
+						}
+						.job {}
+					}
+				}
+			}
+		}
+		.carousel__pagination {
+			// background-color: red;
+			.carousel__pagination-item {
+				.carousel__pagination-button {
+				
+					height: 5px;
+					border-radius: 50px;
+					background-color: red !important;
+					width: 5px;
+				}
+			}
+		}
+	
+	}
 }
 
 .contact-btn {
@@ -636,6 +759,20 @@ $fontSize: 14px;
 		justify-content: center;
 		padding: 3px 28px;
 		border-radius: 50px;
+	}
+}
+
+
+@media (max-width: 575.98px) { 
+
+	.realisations-container {
+		.carousel__slide {
+			justify-content: inherit !important;
+		}
+	}
+
+	.temoignages-container {
+	
 	}
 }
 </style>
