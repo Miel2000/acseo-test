@@ -528,7 +528,9 @@ const settingsSecondCarousel = {
 										<div
 											class="collab-cta position-absolute d-flex flex-column"
 										>
-											<a href="#" alt=""><img src="icon/arrowRed.svg" alt="" /></a>
+											<a href="#" alt=""
+												><img src="icon/arrowRed.svg" alt=""
+											/></a>
 										</div>
 									</div>
 								</div>
@@ -540,6 +542,35 @@ const settingsSecondCarousel = {
 					<a href="">Voir toutes les articles</a>
 				</div>
 			</div>
+		</div>
+
+		<div class="appelprojet-container">
+			<div class="container">
+				<div class="logo pt-5 mt-5 d-flex justify-content-center">
+					<img src="logo/acseo-mini.svg" alt="" />
+				</div>
+	
+				<div class="title d-flex  justify-content-center pt-5 pb-4">
+					<h2>Une idée, un projet ?</h2>
+				</div>
+				<span class="sentence2 d-flex text-center justify-content-center"
+					>Nos sommes à votre disposition pour discuter.</span
+				>
+				<div
+					class="contact-btn p-0 pt-5 pb-5 d-flex justify-content-center"
+				>
+					<RouterLink
+						to="/contact"
+						class="nav-link  btn-text text-light text-nowrap"
+					>
+						Contactez-nous
+					</RouterLink>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-container">
+			
 		</div>
 	</main>
 
@@ -560,7 +591,6 @@ $fontSize: 14px;
 .bordering-right {
 	border-right: solid 1px $greenColor;
 }
-
 
 .presentation-container,
 .expertises-container,
@@ -662,7 +692,6 @@ $fontSize: 14px;
 		height: 73px;
 	}
 }
-
 
 .presentation-container {
 	.title {
@@ -934,23 +963,23 @@ $fontSize: 14px;
 			.cta {
 				.collab-cta {
 					bottom: 26px;
-    				right: 20px;
+					right: 20px;
 					a {
 						transition: all 0.25s;
 						height: 30px;
 						display: flex;
 						justify-content: center;
 						width: 30px;
-						border: 1px solid #FF6D74;
+						border: 1px solid #ff6d74;
 						border-radius: 50%;
-						
+
 						img {
 							width: 10px;
 						}
 						&:hover {
 							border-radius: 50%;
 							img {
-								filter:brightness(10);
+								filter: brightness(10);
 								fill: white;
 							}
 							background-color: $ctaLinkColor;
@@ -960,6 +989,14 @@ $fontSize: 14px;
 				}
 			}
 		}
+	}
+}
+
+.appelprojet-container {
+	@include subtitleWithUnderline;
+
+	.sentence2 {
+		@include title-h2;
 	}
 }
 .contact-btn {
