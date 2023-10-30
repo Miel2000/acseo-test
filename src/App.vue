@@ -183,7 +183,7 @@ const settingsSecondCarousel = {
 				</div>
 
 				<div
-					class="right-content col-6 d-none d-lg-block d-flex justify-content-sm-center mx-auto my-auto"
+					class="right-content col-6 d-none d-lg-block d-flex justify-content-sm-center mx-auto pb-5 my-auto"
 				>
 					<img
 						alt="logo-acseo"
@@ -378,7 +378,7 @@ const settingsSecondCarousel = {
 					</Carousel>
 				</div>
 			</div>
-			<div class="btn-more pt-3 pb-5 text-center">
+			<div class="btn-more pt-5 pb-5 text-center">
 				<a href="">Voir toutes les réalisations</a>
 			</div>
 		</div>
@@ -485,11 +485,10 @@ const settingsSecondCarousel = {
 				</div>
 			</div>
 
-			<div class="btn-more pt-3 pb-5 text-center">
+			<div class="btn-more pt-5 pb-5 mb-4 text-center">
 				<a href="">Voir toutes les technologies</a>
 			</div>
 		</div>
-
 		<div class="blog-container">
 			<div class="title d-flex justify-content-center pt-5 pb-4">
 				<h2>Le blog d'ACSEO</h2>
@@ -506,8 +505,10 @@ const settingsSecondCarousel = {
 					</p>
 				</div>
 
-				<div class="cards-container pb-3 d-lg-flex justify-content-around">
-					<div v-for="card in 3" class="card mb-3 mx-auto">
+				<div
+					class="cards-container desktop d-none d-lg-block pb-3 d-lg-flex justify-content-around"
+				>
+					<div v-for="card in 3" class="card col-4 mb-3">
 						<div class="image">
 							<img src="img/debug.svg" alt="" />
 						</div>
@@ -519,7 +520,41 @@ const settingsSecondCarousel = {
 									<span>Débbugger un projet PHP Symfony en 2021</span>
 								</div>
 								<div class="text mb-4">
-									Si debugger, c’est supprimer des bugs, alors programmer ne
+									Si debugger, c'est supprimer des bugs, alors programmer ne
+									peut être (...)
+								</div>
+								<div class="footer mb-5 d-flex justify-content-between">
+									<div class="date">08 Juillet2021</div>
+									<div class="cta">
+										<div
+											class="collab-cta position-absolute d-flex flex-column"
+										>
+											<a href="#" alt=""
+												><img src="icon/arrowRed.svg" alt=""
+											/></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="cards-container mobile d-block d-lg-none pb-3 d-flex flex-column justify-content-around"
+				>
+					<div v-for="card in 3" class="card mb-3 mx-auto">
+						<div class="image">
+							<img src="img/debug.svg" alt="" />
+						</div>
+						<div class="container mx-2 h-100">
+							<div
+								class="details h-100 d-flex flex-column justify-content-around"
+							>
+								<div class="title mt-3 mb-3">
+									<span>Débbugger un projet PHP Symfony en 2021</span>
+								</div>
+								<div class="text mb-4">
+									Si debugger, c'est supprimer des bugs, alors programmer ne
 									peut être (...)
 								</div>
 								<div class="footer mb-5 d-flex justify-content-between">
@@ -543,38 +578,34 @@ const settingsSecondCarousel = {
 				</div>
 			</div>
 		</div>
-
 		<div class="appelprojet-container">
 			<div class="container">
 				<div class="logo pt-5 mt-5 d-flex justify-content-center">
 					<img src="logo/acseo-mini.svg" alt="" />
 				</div>
-	
-				<div class="title d-flex  justify-content-center pt-5 pb-4">
+
+				<div class="title d-flex justify-content-center pt-5 pb-4">
 					<h2>Une idée, un projet ?</h2>
 				</div>
 				<span class="sentence2 d-flex text-center justify-content-center"
 					>Nos sommes à votre disposition pour discuter.</span
 				>
-				<div
-					class="contact-btn p-0 pt-5 pb-5 d-flex justify-content-center"
-				>
+				<div class="contact-btn p-0 pt-5 pb-5 d-flex justify-content-center">
 					<RouterLink
 						to="/contact"
-						class="nav-link  btn-text text-light text-nowrap"
+						class="nav-link btn-text text-light text-nowrap"
 					>
 						Contactez-nous
 					</RouterLink>
 				</div>
 			</div>
 		</div>
-
 		<div class="footer-container pt-5 pb-5">
 			<div class="container">
 				<div class="desktop row content d-flex d-none d-lg-flex">
 					<div class="footer-box pb-md-3 col-lg-3">
 						<div class="logo pb-3">
-							<img src="logo/acseo-large.svg" alt="ACSEO">
+							<img src="logo/acseo-large.svg" alt="ACSEO" />
 						</div>
 						<div class="contact d-flex flex-column">
 							<span class="title">SIÈGE SOCIAL</span>
@@ -583,12 +614,11 @@ const settingsSecondCarousel = {
 							<span>04 42 38 70 46</span>
 						</div>
 						<div class="social">
-							<img src="icon/linked.svg" alt="">
-							<img src="icon/mailwhite.svg" alt="">
+							<img src="icon/linked.svg" alt="" />
+							<img src="icon/mailwhite.svg" alt="" />
 						</div>
-						
 					</div>
-		
+
 					<div class="footer-box pb-md-3 col-lg-3">
 						<div class="title">À PROPOS</div>
 						<div class="line-text">Technologies & CMS</div>
@@ -597,7 +627,7 @@ const settingsSecondCarousel = {
 						<div class="line-text">Contactez-vous</div>
 						<div class="line-text">Nous rejoindre</div>
 					</div>
-		
+
 					<div class="footer-box pb-md-3 col-lg-3">
 						<div class="title">EXPERTISES</div>
 						<div class="line-text">Technologies & CMS</div>
@@ -606,7 +636,7 @@ const settingsSecondCarousel = {
 						<div class="line-text">Contactez-vous</div>
 						<div class="line-text">Nous rejoindre</div>
 					</div>
-		
+
 					<div class="footer-box pb-md-3 col-lg-3">
 						<div class="title">LES AGENCES ASCEO</div>
 						<div class="line-text">Technologies & CMS</div>
@@ -616,10 +646,12 @@ const settingsSecondCarousel = {
 						<div class="line-text">Nous rejoindre</div>
 					</div>
 				</div>
-				<div class="mobile content row d-flex flex-column text-center d-lg-none">
+				<div
+					class="mobile content row d-flex flex-column text-center d-lg-none"
+				>
 					<div class="footer-box pb-3 pt-3 col-lg-3">
 						<div class="logo pb-4">
-							<img src="logo/acseo-large.svg" alt="ACSEO">
+							<img src="logo/acseo-large.svg" alt="ACSEO" />
 						</div>
 						<div class="contact d-flex flex-column">
 							<span class="title">CONTACT</span>
@@ -628,20 +660,21 @@ const settingsSecondCarousel = {
 							<span>04 42 38 70 46</span>
 						</div>
 						<div class="social">
-							<img src="icon/linked.svg" alt="linkedin">
-							<img src="icon/mailwhite.svg" alt="mail">
-							<img src="icon/twitter.svg" alt="twitter">
+							<img src="icon/linked.svg" alt="linkedin" />
+							<img src="icon/mailwhite.svg" alt="mail" />
+							<img src="icon/twitter.svg" alt="twitter" />
 						</div>
-						
 					</div>
-		
+
 					<div class="footer-box pb-3 pt-3 col-lg-3">
 						<div class="title">A PROPOS D'ASCEO</div>
 						<div class="line-text">L'agence d'Aix-en-Provence</div>
 						<div class="line-text">L'agence de Montpellier</div>
 						<div class="line-text">L'agence de Paris</div>
 						<div class="line-text">Équipe</div>
-						<div class="line-text active">Nous rejoindre  <span class="notifications">5</span></div>
+						<div class="line-text active">
+							Nous rejoindre <span class="notifications">5</span>
+						</div>
 					</div>
 					<div class="footer-box pb-3 pt-3 col-lg-3">
 						<div class="title">EXPERTISES</div>
@@ -653,32 +686,36 @@ const settingsSecondCarousel = {
 					</div>
 				</div>
 			</div>
-
 		</div>
 		<div class="legal-container">
 			<div class="container">
 				<row class="desktop">
-					<div class="legale d-flex d-lg-flex d-none pt-3 pb-3 justify-content-between">
+					<div
+						class="legale d-flex d-lg-flex d-none pt-3 pb-3 justify-content-between"
+					>
 						<div class="left-content">
 							<span>© ACSEO 2021 | Tous droits réservés</span>
 						</div>
 						<div class="right-content">
-							<span>Politique de confidentialité  |  Mentions légales</span>
+							<span>Politique de confidentialité | Mentions légales</span>
 						</div>
 					</div>
 				</row>
 				<row class="mobile mb-4">
-					<div class="legale text-center d-lg-none d-flex d-flex flex-column pt-4 mb-4 justify-content-between">
+					<div
+						class="legale text-center d-lg-none d-flex d-flex flex-column pt-4 mb-4 justify-content-between"
+					>
 						<div class="left-content pb-2">
 							<span>© ACSEO 2021 | Tous droits réservés</span>
 						</div>
 						<div class="right-content">
-							<span>Nous contacter  |  Conditions générales  |  Mentions légales</span>
+							<span
+								>Nous contacter | Conditions générales | Mentions légales</span
+							>
 						</div>
 					</div>
 				</row>
 			</div>
-
 		</div>
 	</main>
 
@@ -686,8 +723,7 @@ const settingsSecondCarousel = {
 </template>
 
 <style scoped lang="scss">
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:ital,wght@0,100;0,200;0,300;0,900;1,100;1,200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Raleway:ital,wght@0,100;0,200;0,300;0,900;1,100;1,200&display=swap");
 $primary: #ff6d74;
 $grayBackground: #f5f5f5;
 $grayText: #737b7d;
@@ -717,10 +753,9 @@ $fontSize: 14px;
 	}
 }
 
-
 .footer-container {
 	color: white;
-	background-color: #1E3557;
+	background-color: #1e3557;
 
 	.desktop {
 		.footer-box {
@@ -729,10 +764,8 @@ $fontSize: 14px;
 			}
 		}
 	}
-	
 
 	.mobile {
-	
 		.line-text {
 			&.active {
 				align-items: center;
@@ -745,19 +778,19 @@ $fontSize: 14px;
 				font-size: 10px;
 				height: 15px;
 				width: 15px;
-				background-color: #FF6D74;
-				border-radius:50%;
+				background-color: #ff6d74;
+				border-radius: 50%;
 			}
 		}
 	}
 	.footer-box {
-		border-right: 1px solid #A7D9DB;
+		border-right: 1px solid #a7d9db;
 		min-height: 187px;
-		display:flex;
+		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		padding: 0 30px;
-		font-family: 'Poppins', sans-serif;
+		font-family: "Poppins", sans-serif;
 		font-size: 14px;
 		.title {
 			font-size: 18px;
@@ -775,10 +808,9 @@ $fontSize: 14px;
 				padding: 10px;
 			}
 		}
-		
+
 		&:last-child {
 			border-right: none;
-		
 		}
 	}
 }
@@ -855,6 +887,7 @@ $fontSize: 14px;
 .btn-more {
 	a {
 		@include ctaLink;
+		font-weight: 900;
 	}
 }
 
@@ -1131,6 +1164,9 @@ $fontSize: 14px;
 			max-width: 360px;
 			min-width: 335px;
 			height: 470px;
+			.image {
+				width: 100%;
+			}
 		}
 		.title {
 			color: #007c9f;
@@ -1142,6 +1178,7 @@ $fontSize: 14px;
 		}
 		.footer {
 			.date {
+				color: $grayText;
 			}
 			.cta {
 				.collab-cta {
@@ -1183,9 +1220,7 @@ $fontSize: 14px;
 	}
 }
 
-
 .legale-container {
-
 }
 .contact-btn {
 	padding: 0px 0px 0px 25px;
@@ -1209,18 +1244,16 @@ $fontSize: 14px;
 	}
 }
 
-@media (max-width: 992px) { 
+@media (max-width: 992px) {
 	.footer-box {
 		border-right: none !important;
-		border-bottom: solid 1px #A7D9DB;
+		border-bottom: solid 1px #a7d9db;
 		&:last-child {
 			border-bottom: none;
-		
 		}
 		img {
 			width: inherit !important;
 		}
 	}
 }
-
 </style>
