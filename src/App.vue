@@ -137,7 +137,7 @@ const settingsSecondCarousel = {
 						</div>
 
 						<div
-							class="contact-btn d-lg-flex align-items-center justify-content-center"
+							class="btn-contact d-lg-flex align-items-center justify-content-center"
 						>
 							<RouterLink
 								to="/contact"
@@ -174,7 +174,7 @@ const settingsSecondCarousel = {
 					</div>
 
 					<div
-						class="contact-btn pb-4 text-light d-flex justify-content-center justify-content-lg-start"
+						class="btn-contact pb-4 text-light d-flex justify-content-center justify-content-lg-start"
 					>
 						<RouterLink to="/contact" class="nav-link btn-text text-nowrap">
 							Contactez-nous
@@ -434,7 +434,7 @@ const settingsSecondCarousel = {
 		</div>
 		<div class="technologies-container">
 			<div class="title d-flex justify-content-center pt-5 pb-4">
-				<h2>Les meilleurs technologies</h2>
+				<h2 class="text-center">Les meilleurs technologies</h2>
 			</div>
 			<div class="container">
 				<div
@@ -590,7 +590,7 @@ const settingsSecondCarousel = {
 				<span class="sentence2 d-flex text-center justify-content-center"
 					>Nos sommes à votre disposition pour discuter.</span
 				>
-				<div class="contact-btn p-0 pt-5 pb-5 d-flex justify-content-center">
+				<div class="btn-contact p-0 pt-5 pb-5 d-flex justify-content-center">
 					<RouterLink
 						to="/contact"
 						class="nav-link btn-text text-light text-nowrap"
@@ -630,20 +630,19 @@ const settingsSecondCarousel = {
 
 					<div class="footer-box pb-md-3 col-lg-3">
 						<div class="title">EXPERTISES</div>
-						<div class="line-text">Technologies & CMS</div>
-						<div class="line-text">Réalisations</div>
+						<div class="line-text">Conseils en stratégie digitale</div>
+						<div class="line-text">Développement Web</div>
 						<div class="line-text">Blog</div>
-						<div class="line-text">Contactez-vous</div>
-						<div class="line-text">Nous rejoindre</div>
+						<div class="line-text">Application mobile</div>
+						<div class="line-text">E-Commerce</div>
 					</div>
 
 					<div class="footer-box pb-md-3 col-lg-3">
 						<div class="title">LES AGENCES ASCEO</div>
-						<div class="line-text">Technologies & CMS</div>
-						<div class="line-text">Réalisations</div>
-						<div class="line-text">Blog</div>
-						<div class="line-text">Contactez-vous</div>
-						<div class="line-text">Nous rejoindre</div>
+						<div class="line-text">L'agence d'Aix-en-Provence</div>
+						<div class="line-text">L'agence de Montpellier</div>
+						<div class="line-text">L'agence de Paris</div>
+						<div class="line-text">Equipe</div>
 					</div>
 				</div>
 				<div
@@ -744,77 +743,6 @@ $fontSize: 14px;
 	font-size: $fontSize;
 }
 
-.legal-container {
-	font-family: "Raleway", sans-serif;
-	font-size: 12px;
-	line-height: 16px;
-	span {
-		font-weight: 900;
-	}
-}
-
-.footer-container {
-	color: white;
-	background-color: #1e3557;
-
-	.desktop {
-		.footer-box {
-			.social {
-				transform: translateX(-11px);
-			}
-		}
-	}
-
-	.mobile {
-		.line-text {
-			&.active {
-				align-items: center;
-				display: inline-flex;
-				justify-content: center;
-				font-weight: 900;
-			}
-			.notifications {
-				transform: translateX(10px);
-				font-size: 10px;
-				height: 15px;
-				width: 15px;
-				background-color: #ff6d74;
-				border-radius: 50%;
-			}
-		}
-	}
-	.footer-box {
-		border-right: 1px solid #a7d9db;
-		min-height: 187px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		padding: 0 30px;
-		font-family: "Poppins", sans-serif;
-		font-size: 14px;
-		.title {
-			font-size: 18px;
-			line-height: 22px;
-			font-weight: 700;
-		}
-		.logo {
-			img {
-				width: 100%;
-			}
-		}
-
-		.social {
-			img {
-				padding: 10px;
-			}
-		}
-
-		&:last-child {
-			border-right: none;
-		}
-	}
-}
-
 // Mixin
 @mixin underlineText-h1 {
 	&::before {
@@ -841,7 +769,6 @@ $fontSize: 14px;
 		background-color: $greenColor;
 	}
 }
-
 @mixin title-h1 {
 	position: relative;
 	font-family: "Raleway", sans-serif;
@@ -849,7 +776,6 @@ $fontSize: 14px;
 	font-size: 60px;
 	font-weight: 900;
 }
-
 @mixin title-h2 {
 	position: relative;
 	font-family: "Raleway", sans-serif;
@@ -866,14 +792,12 @@ $fontSize: 14px;
 	line-height: 18px;
 	font-weight: 700;
 }
-
 @mixin ctaLink {
 	font-family: "Raleway", sans-serif;
 	color: $ctaLinkColor;
 	font-size: 14px;
 	line-height: 18px;
 }
-
 @mixin subtitleWithUnderline {
 	.title {
 		position: relative;
@@ -884,12 +808,7 @@ $fontSize: 14px;
 		}
 	}
 }
-.btn-more {
-	a {
-		@include ctaLink;
-		font-weight: 900;
-	}
-}
+
 
 .navbar-container {
 	font-size: $fontSize;
@@ -1174,8 +1093,6 @@ $fontSize: 14px;
 			line-height: 28px;
 			font-weight: 700;
 		}
-		.text {
-		}
 		.footer {
 			.date {
 				color: $grayText;
@@ -1220,9 +1137,83 @@ $fontSize: 14px;
 	}
 }
 
-.legale-container {
+.footer-container {
+	color: white;
+	background-color: #1e3557;
+
+	.desktop {
+		.footer-box {
+			.social {
+				transform: translateX(-11px);
+			}
+		}
+	}
+
+	.mobile {
+		.line-text {
+			&.active {
+				align-items: center;
+				display: inline-flex;
+				justify-content: center;
+				font-weight: 900;
+			}
+			.notifications {
+				transform: translateX(10px);
+				font-size: 10px;
+				height: 15px;
+				width: 15px;
+				background-color: #ff6d74;
+				border-radius: 50%;
+			}
+		}
+	}
+	.footer-box {
+		border-right: 1px solid #a7d9db;
+		min-height: 187px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 0 30px;
+		font-family: "Poppins", sans-serif;
+		font-size: 14px;
+		.title {
+			font-size: 18px;
+			line-height: 22px;
+			font-weight: 700;
+		}
+		.logo {
+			img {
+				width: 100%;
+			}
+		}
+
+		.social {
+			img {
+				padding: 10px;
+			}
+		}
+
+		&:last-child {
+			border-right: none;
+		}
+	}
 }
-.contact-btn {
+
+.legal-container {
+	font-family: "Raleway", sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	span {
+		font-weight: 900;
+	}
+}
+.btn-more {
+	a {
+		@include ctaLink;
+		font-weight: 900;
+	}
+}
+.btn-contact {
 	padding: 0px 0px 0px 25px;
 	.btn-text {
 		height: 40px;
